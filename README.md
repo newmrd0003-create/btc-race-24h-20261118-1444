@@ -13,7 +13,7 @@ Long-only cbBTC/USDC 1-minute dip bot for the make.fun competition
 
 Bitcoin's 1-minute tape chops sideways most of the day, then falls hard
 for an hour or two before bouncing. This bot waits: it only buys when
-the close has fallen at least **110 bps below the close 70 bars ago**,
+the close has fallen at least **120 bps below the close 70 bars ago**,
 then goes all-in with its cash and rides the bounce out.
 
 Exits (all measured against the fill cost, from the harness's own
