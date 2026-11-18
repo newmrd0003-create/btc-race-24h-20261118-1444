@@ -4,7 +4,7 @@
 // Idea, in one paragraph: Bitcoin's 1-minute tape spends most of a day
 // chopping sideways and then falls hard for an hour or two before bouncing.
 // This bot does nothing for hours, waits until the close has fallen at
-// least 110 bps below where it stood 70 bars ago, then buys the dip with
+// least 120 bps below where it stood 70 bars ago, then buys the dip with
 // all of its cash and rides the bounce out. It exits on a hard
 // take-profit (+140 bps over its fill cost), a hard stop (-250 bps), a
 // trailing give-back once the trade has run up 150 bps, or a small
@@ -17,7 +17,7 @@
 // 2 bps slippage, constant-product impact on the fill bar's open depth,
 // fills at the next bar's open) on the dev window in this kit and on the
 // previous race's dev window, and choosing the plateau that is good on
-// both: 70-bar lookback, 110 bps dip, 140 bps take-profit. A longer
+// both: 70-bar lookback, 120 bps dip, 140 bps take-profit. A longer
 // lookback with a tighter take-profit beats the old 55-bar / 190-bps
 // settings on a falling tape, because the dips that matter take longer to
 // form and the bounces that follow them are shallower.
@@ -35,7 +35,7 @@ const BPS = 10000n;
 
 // --- Tuned rules (see the header comment for how they were picked) ---
 const LOOKBACK_BARS = 70; // dip measured against the close this many bars ago
-const DIP_BPS = 110n; // buy only when the close fell at least this far
+const DIP_BPS = 120n; // buy only when the close fell at least this far
 const MIN_HISTORY = 71; // closes needed before the first entry is allowed
 const ENTRY_LAST_BAR = 1320; // no new entries after this bar (too late to exit well)
 const LATE_BAR = 1290; // from here, the late-window exit rules switch on
